@@ -9,9 +9,8 @@
   <div class="space-x-8 ml-20">
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/">Home</a>
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/thePacks">The Packs</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/shop">Shop</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/signUp">Sign Up</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/contactUs">About Us</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/aboutUs">About Us</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/help">Help</a>
   </div>
   <div class="flex space-x-11 mr-24">
     <img class="h-5 hover:cursor-pointer" src="/searchIcon.png" alt="searchIcon">
