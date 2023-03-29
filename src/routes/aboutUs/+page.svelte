@@ -1,6 +1,8 @@
 
 <script>
     import { fly } from "svelte/transition";
+    import Cart from "../Cart.svelte";
+    import { isCartOpen } from "../../store";
 </script>
 <p in:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16">About Us</p>
 
@@ -18,3 +20,7 @@
         Thank you for choosing our bagpacks for your backpacking needs. We look forward to helping you make your next adventure unforgettable!
     </p>
 </section>
+
+{#if $isCartOpen}
+    <Cart/>
+{/if}

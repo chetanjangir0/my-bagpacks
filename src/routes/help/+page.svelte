@@ -1,6 +1,8 @@
 
 <script>
     import { fly } from "svelte/transition";
+    import Cart from "../Cart.svelte";
+    import { isCartOpen } from "../../store";
 </script>
 <p in:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16">RETURN & EXCHANGE POLICY</p>
 
@@ -24,3 +26,7 @@
         Reverse pickup facility is available only in pin codes where COD is available. For the rest customers need to send the packet back to us at the address given below for which Courier Charges up to Rs.120 are refunded back.
     </li>
 </ul>
+
+{#if $isCartOpen}
+    <Cart/>
+{/if}
