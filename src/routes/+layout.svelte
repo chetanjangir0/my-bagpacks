@@ -7,14 +7,14 @@
   </script>
 <nav class="flex justify-between bg-white py-4 h-14">
   <div class="space-x-8 ml-20">
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/">Home</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/thePacks">The Packs</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/aboutUs">About Us</a>
-    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2" href="/help">Help</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/">Home</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/thePacks">The Packs</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/aboutUs">About Us</a>
+    <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/help">Help</a>
   </div>
   <div class="flex space-x-11 mr-24">
     <img class="h-5 hover:cursor-pointer" src="/searchIcon.png" alt="searchIcon">
-    <a class="hover:text-emerald-400 h-5" href="/login">Login</a>
+    <a class="hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">Login</a>
     <button on:click={()=>isCartOpen.set(true)}><img class="h-5 hover:cursor-pointer" src="/cartIcon.png" alt="cartIcon"></button>
   </div>
 </nav>

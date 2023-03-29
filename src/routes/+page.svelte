@@ -29,9 +29,9 @@
         src="/heroImage.png"
         alt=""
     />
-    <div class="relative left-44 top-11">
-        <p class="text-5xl font-bold">The last bagpack</p>
-        <p class="text-5xl font-bold">you'll ever buy.</p>
+    <div class="relative left-44 top-20">
+        <p class="text-5xl font-bold font-josefin">The last bagpack</p>
+        <p class="text-5xl font-bold font-josefin">you'll ever buy.</p>
         <a href="/thePacks" class="relative inline-block text-lg group ml-24 mt-10">
             <span
                 class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-none rounded-lg group-hover:text-white"
@@ -42,24 +42,24 @@
                 <span
                     class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-zinc-700 group-hover:-rotate-180 ease"
                 />
-                <span class="relative">Shop now</span>
+                <span class="relative font-montserrat font-bold">Shop now</span>
             </span>
         </a>
     </div>
     <div class="relative left-96 top-24">
-        <a href="www.google.com">
+        <a target="_blank" href="https://www.facebook.com/chetan.jangir.520">
             <img
                 class="h-5 hover:cursor-pointer my-7"
                 src="/facebook.png"
                 alt=""/>
         </a>
-        <a href="www.google.com">
+        <a target="_blank"  href="https://twitter.com/chetanjangir0">
             <img
                 class="h-5 hover:cursor-pointer my-7"
                 src="/twitter.png"
                 alt=""/>
         </a>
-        <a href="www.google.com">
+        <a target="_blank"  href="https://instagram.com/_rohanjangir?igshid=ODM2MWFjZDg=">
             <img
                 class="h-5 hover:cursor-pointer my-7"
                 src="/instagram.png"
@@ -67,7 +67,7 @@
         </a>
     </div>
 </section>
-<p class="text-6xl ml-72 mt-16">Featured</p>
+<p class="text-5xl ml-72 mt-16 font-majorMono">Featured</p>
 
 <section id="featuredBagpacks" class="flex flex-wrap justify-center my-11 space-x-6">
     <div></div>
@@ -80,7 +80,7 @@
             </a>
 
             
-            <a href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}"><p class=" text-amber-700 text-3xl">{bagpack.name.replace('-',' ').toUpperCase()}</p></a>
+            <a class="font-mono" href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}"><p class=" text-amber-700 text-3xl">{bagpack.name.replace('-',' ').toUpperCase()}</p></a>
 
             <p>From $ {bagpack.price}</p>
 
@@ -91,10 +91,10 @@
 
 
 <div class="flex justify-center">
-    <a  href="/thePacks" class="relative bottom-6 text-2xl hover:text-amber-700">View all ></a>
+    <a  href="/thePacks" class="relative  font-montserrat font-bold bottom-6 text-2xl hover:text-amber-700">View all ></a>
 </div>
 
-<p class="text-6xl ml-72 mt-16">REASONS TO BUY</p>
+<p class="text-5xl ml-72 mt-16 font-thin">REASONS TO BUY</p>
 
 
 <section id="cards" class="flex justify-center space-x-12 my-24">

@@ -21,7 +21,7 @@ function updateCart(bagpack:bagpack):void{
 }
 </script>
 
-<div class="text-5xl text-center mt-4">The Catalog</div>
+<div class="text-5xl text-center mt-4 font-majorMono">The Catalog</div>
 
 <section id="featuredBagpacks" class="flex flex-wrap justify-center my-11 space-x-6">
     <div></div>

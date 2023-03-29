@@ -46,7 +46,7 @@
 
         <div id="total" class="border-t border-t-gray-600 h-full ">
             <div class="flex justify-center space-x-64 text-lg">
-                <p>SUBTOTAL</p>
+                <p class="font-montserrat font-bold">SUBTOTAL</p>
                 <p>${subTotal}</p>
             </div>
             <div class="flex justify-center">

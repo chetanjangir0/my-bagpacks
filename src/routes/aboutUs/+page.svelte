@@ -4,7 +4,7 @@
     import Cart from "../Cart.svelte";
     import { isCartOpen } from "../../store";
 </script>
-<p in:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16">About Us</p>
+<p in:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16 font-majorMono">About Us</p>
 
 <section in:fly="{{ y: 100, duration: 500 }}" class="text-2xl w-2/3 mx-auto mt-16 font-mono space-y-12">
     <p>

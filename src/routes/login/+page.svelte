@@ -3,15 +3,15 @@
     import Cart from "../Cart.svelte";
     import { isCartOpen } from "../../store";
 </script>
-<p class="text-4xl text-center mt-20">Login</p>
+<p class="text-4xl text-center mt-20 font-majorMono">Login</p>
 <section class="flex justify-center mt-12 mb-80">
     <form class="flex flex-col items-start w-96">
-        <p class="text-xl">Email</p>
+        <p class="text-xl font-mono tracking-widest">EMAIL</p>
         <input class="border-2 border-gray-200 w-full py-2 px-4 text-center text-2xl" type="text">
         
         
         <div class="flex justify-between w-full mt-7">
-            <p class="text-xl">Password</p>
+            <p class="text-xl font-mono tracking-widest">PASSWORD</p>
             <button>Forgot password</button>
         </div>
         <input class="border-2 border-gray-200 w-full py-2 px-4 text-center text-2xl" type="password">

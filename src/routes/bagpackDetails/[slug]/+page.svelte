@@ -38,7 +38,7 @@
     </div>
 
     <div class="flex flex-col justify-center items-start">
-        <p class="text-5xl text-amber-700 font-semibold">{data.name.toUpperCase()}</p>
+        <p class="text-5xl text-amber-700 font-montserrat font-semibold">{data.name.toUpperCase()}</p>
         <p class="text-2xl font-semibold">{data.type.toUpperCase()}</p>
         <p class="mt-5">COLOR: {bagColor.toUpperCase()}</p>
         <p class="text-2xl mt-2">$ {data.price}</p>
