@@ -32,7 +32,7 @@
     <div class="relative left-44 top-11">
         <p class="text-5xl font-bold">The last bagpack</p>
         <p class="text-5xl font-bold">you'll ever buy.</p>
-        <a href="/shop" class="relative inline-block text-lg group ml-24 mt-10">
+        <a href="/thePacks" class="relative inline-block text-lg group ml-24 mt-10">
             <span
                 class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-none rounded-lg group-hover:text-white"
             >
