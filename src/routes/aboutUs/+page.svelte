@@ -2,9 +2,9 @@
 <script>
     import { fly } from "svelte/transition";
 </script>
-<p transition:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16">About Us</p>
+<p in:fly="{{ y: 50, duration: 500 }}" class="text-center text-4xl mt-16">About Us</p>
 
-<section transition:fly="{{ y: 100, duration: 500 }}" class="text-2xl w-2/3 mx-auto mt-16 font-mono space-y-12">
+<section in:fly="{{ y: 100, duration: 500 }}" class="text-2xl w-2/3 mx-auto mt-16 font-mono space-y-12">
     <p>
         Welcome to our backpack store! We are a team of passionate backpackers who understand the importance of having a high-quality backpack that is both durable and stylish. Our mission is to provide you with the best selection of backpacks on the market, from trusted brands that we personally use and trust ourselves. We believe in providing exceptional customer service, and we are committed to helping you find the perfect backpack to fit your needs. Thank you for choosing our store, and happy shopping!
     </p>
