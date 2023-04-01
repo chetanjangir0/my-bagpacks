@@ -5,8 +5,8 @@
     import { isCartOpen } from "../store";
     export let data: PageData;
   </script>
-<nav class="flex justify-between bg-white py-4 h-14">
-  <div class="space-x-8 ml-20">
+<nav class="flex justify-end bg-white py-4 h-14 sm:justify-between">
+  <div class="hidden sm:space-x-8  sm:block sm:ml-20">
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/">Home</a>
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/thePacks">The Packs</a>
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/aboutUs">About Us</a>
@@ -14,8 +14,8 @@
   </div>
   <div class="flex space-x-11 mr-24">
     <img class="h-5 hover:cursor-pointer" src="/searchIcon.png" alt="searchIcon">
-    <a class="hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">Login</a>
-    <button on:click={()=>isCartOpen.set(true)}><img class="h-5 hover:cursor-pointer" src="/cartIcon.png" alt="cartIcon"></button>
+    <a class="hidden sm:block hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">Login</a>
+    <button on:click={()=>isCartOpen.set(true)}><img class="w-5 h-5 hover:cursor-pointer" src="/cartIcon.png" alt="cartIcon"></button>
   </div>
 </nav>
 
@@ -29,8 +29,8 @@
 {/key}
 
 
-<footer class="bg-zinc-700 h-56 text-gray-400">
-  <section class="flex justify-around pt-5">
+<footer class="bg-zinc-700 text-gray-400 sm:h-56">
+  <section class="flex flex-col items-center space-y-5 pt-5 sm:flex-row sm:items-start sm:justify-around sm:space-y-0">
     <ul class="flex flex-col space-y-1">
       <p class=" text-white font-bold text-xl underline underline-offset-4 decoration-emerald-500 decoration-2">Company</p>
   

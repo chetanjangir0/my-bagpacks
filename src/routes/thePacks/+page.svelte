@@ -21,24 +21,26 @@ function updateCart(bagpack:bagpack):void{
 }
 </script>
 
-<div class="text-5xl text-center mt-4 font-majorMono">The Catalog</div>
+<div class="text-3xl text-center mt-4 font-majorMono sm:text-5xl">The Catalog</div>
 
-<section id="featuredBagpacks" class="flex flex-wrap justify-center my-11 space-x-6">
-    <div></div>
+<section id="allBagpacks" class="flex flex-wrap justify-around my-11 sm:justify-center sm:space-x-6">
+    <div class="hidden sm:block"></div>
     {#each $bagpacks as bagpack}
-        <section id="bagpacks" class="flex flex-col mb-44 h-96 w-96 items-center space-y-2">
+        <section id="bagpacks" class="flex flex-col flex-wrap h-72 w-32 items-center sm:space-y-2 sm:h-96 sm:w-96 sm:flex-nowrap sm:mb-44">
             <a href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
-                <div class="transition-all duration-500 hover:-translate-y-4 hover:cursor-pointer">
+                <div class="transition-all duration-500 sm:hover:-translate-y-4 sm:hover:cursor-pointer">
                     <img class="max-h-full max-w-full" src="/bagpacks/{bagpack.name}.jpg" alt="">
                 </div>
             </a>
 
             
-            <a href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}"><p class=" text-amber-700 text-3xl">{bagpack.name.replace('-',' ').toUpperCase()}</p></a>
+            <a class="font-mono w-[5.25rem] text-center sm:w-auto sm:text-left" href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
+                <p class="text-amber-700 text-xl sm:text-3xl">{bagpack.name.replace('-',' ').toUpperCase()}</p>
+            </a>
 
             <p>From $ {bagpack.price}</p>
 
-            <button on:click={()=>updateCart(bagpack)} class="transition-all duration-500 text-sm px-6 py-2 border border-black hover:bg-yellow-700 hover:text-white hover:border-white">ADD TO CART</button>
+            <button on:click={()=>updateCart(bagpack)} class="transition-all duration-500 text-sm px-4 py-1 border border-black hover:bg-yellow-700 hover:text-white hover:border-white sm:px-6 sm:py-2">ADD TO CART</button>
         </section>
     {/each}
 </section>
