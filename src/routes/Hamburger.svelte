@@ -20,6 +20,9 @@
             <button on:click={()=>isHamburgerOpen.set(false)}>
                 <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold text-4xl" href="/help">Help</a>
             </button>
+            <button on:click={()=>isHamburgerOpen.set(false)}>
+                <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold text-4xl" href="/login">Login</a>
+            </button>
           </div>
     </div>
 
