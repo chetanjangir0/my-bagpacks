@@ -1,6 +1,5 @@
 <script lang="ts">
 import { bagpacks,isCartOpen,cartItems } from "../../store";
-import Cart from "../Cart.svelte";
 interface bagpack {
         name:string,
         type:string,
@@ -23,10 +22,11 @@ function updateCart(bagpack:bagpack):void{
 
 <div class="text-3xl text-center mt-4 font-majorMono sm:text-5xl">The Catalog</div>
 
-<section id="allBagpacks" class="flex flex-wrap justify-around my-11 sm:justify-center sm:space-x-6">
+
+<section id="allbagpacks" class="flex flex-wrap justify-around my-11 sm:justify-center sm:space-x-6">
     <div class="hidden sm:block"></div>
     {#each $bagpacks as bagpack}
-        <section id="bagpacks" class="flex flex-col flex-wrap h-72 w-32 items-center sm:space-y-2 sm:h-96 sm:w-96 sm:flex-nowrap sm:mb-44">
+        <section id="bagpacks" class="flex flex-col flex-wrap h-72 w-48 items-center sm:space-y-2 sm:h-96 sm:w-96 sm:flex-nowrap sm:mb-44">
             <a href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
                 <div class="transition-all duration-500 sm:hover:-translate-y-4 sm:hover:cursor-pointer">
                     <img class="max-h-full max-w-full" src="/bagpacks/{bagpack.name}.jpg" alt="">
@@ -34,7 +34,7 @@ function updateCart(bagpack:bagpack):void{
             </a>
 
             
-            <a class="font-mono w-[5.25rem] text-center sm:w-auto sm:text-left" href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
+            <a class="font-mono text-center sm:text-left" href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
                 <p class="text-amber-700 text-xl sm:text-3xl">{bagpack.name.replace('-',' ').toUpperCase()}</p>
             </a>
 
@@ -44,8 +44,3 @@ function updateCart(bagpack:bagpack):void{
         </section>
     {/each}
 </section>
-
-
-{#if $isCartOpen}
-    <Cart/>
-{/if}

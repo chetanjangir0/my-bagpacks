@@ -2,7 +2,9 @@
     import "../app.css";
     import { fly } from "svelte/transition";
     import type { PageData } from './$types';
-    import { isCartOpen } from "../store";
+    import { isCartOpen,isHamburgerOpen } from "../store";
+    import Hamburger from "./Hamburger.svelte";
+    import Cart from "./Cart.svelte";
     export let data: PageData;
   </script>
 <nav class="flex justify-end bg-white py-4 h-14 sm:justify-between">
@@ -12,12 +14,21 @@
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/aboutUs">About Us</a>
     <a class="hover:text-gray-400 hover:underline underline-offset-4 decoration-emerald-500 decoration-2 font-montserrat font-bold" href="/help">Help</a>
   </div>
-  <div class="flex space-x-11 mr-24">
+  <div class="flex space-x-11 mr-10 sm:mr-24">
     <img class="h-5 hover:cursor-pointer" src="/searchIcon.png" alt="searchIcon">
     <a class="hidden sm:block hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">Login</a>
     <button on:click={()=>isCartOpen.set(true)}><img class="w-5 h-5 hover:cursor-pointer" src="/cartIcon.png" alt="cartIcon"></button>
+    <button class="sm:hidden" on:click={()=>isHamburgerOpen.set(true)}><img class="w-5 h-5 hover:cursor-pointer" src="/hamburger.png" alt="cartIcon"></button>
   </div>
 </nav>
+
+{#if $isHamburgerOpen}
+    <Hamburger/>
+{/if}
+
+{#if $isCartOpen}
+    <Cart/>
+{/if}
 
 <!-- for smooth transition between pages, +layout.ts file is also created for this reason -->
 {#key data.currentPath}

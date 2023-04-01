@@ -1,6 +1,5 @@
 <script lang="ts">
     import { featuredBagpacks,cartItems,isCartOpen } from "../store";
-    import Cart from "./Cart.svelte";
     interface bagpack {
         name:string,
         type:string,
@@ -30,8 +29,8 @@
         alt=""
     />
     <div class="mt-10 sm:mt-0 sm:left-44 sm:relative sm:top-20">
-        <p class="font-bold font-josefin sm:text-5xl">The last bagpack</p>
-        <p class="font-bold font-josefin mb-3 sm:text-5xl sm:mb-0">you'll ever buy.</p>
+        <p class="font-bold text-xl font-josefin sm:text-5xl">The last bagpack</p>
+        <p class="font-bold text-xl font-josefin mb-3 sm:text-5xl sm:mb-0">you'll ever buy.</p>
         <a href="/thePacks" class="hidden sm:relative sm:inline-block text-lg group ml-24 mt-10">
             <span
                 class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-none rounded-lg group-hover:text-white"
@@ -76,7 +75,7 @@
 <section id="featuredBagpacks" class="flex flex-wrap justify-around my-11 sm:justify-center sm:space-x-6">
     <div class="hidden sm:block"></div>
     {#each $featuredBagpacks as bagpack}
-        <section id="bagpacks" class="flex flex-col flex-wrap h-72 w-32 items-center sm:space-y-2 sm:h-96 sm:w-96 sm:flex-nowrap sm:mb-44">
+        <section id="bagpacks" class="flex flex-col flex-wrap h-72 w-48 items-center sm:space-y-2 sm:h-96 sm:w-96 sm:flex-nowrap sm:mb-44">
             <a href="/bagpackDetails/{bagpack.name},{bagpack.type},{bagpack.price}">
                 <div class="transition-all duration-500 sm:hover:-translate-y-4 sm:hover:cursor-pointer">
                     <img class="max-h-full max-w-full" src="/bagpacks/{bagpack.name}.jpg" alt="">
@@ -127,7 +126,3 @@
 </section>
 
 
-
-{#if $isCartOpen}
-    <Cart/>
-{/if}

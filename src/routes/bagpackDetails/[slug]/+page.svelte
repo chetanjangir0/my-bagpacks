@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { PageData } from "./$types";
-    import Cart from "../../Cart.svelte";
     import { cartItems,isCartOpen } from "../../../store";
     export let data: PageData;
     let bagColor:string=data.name.split('-')[1];
@@ -32,14 +31,16 @@
         cartItems.update(items=>[...items,{name:data.name,type:data.type,price:data.price,size:size,quantity:quantity}]);
     }
 </script>
-<section class="flex h-[47rem] items-center space-x-28">
-    <div class="max-h-full max-w-full">
-        <img class="h-[40rem]" src="/bagpacks/{data.name}.jpg" alt="">
+
+
+<section class="flex flex-col items-center mb-6 sm:mb-0 sm:items-start sm:flex-row sm:h-[47rem] lg:items-center lg:space-x-28">
+    <div class="sm:h-[40rem] sm:w-[40rem]">
+        <img class="max-h-full max-w-full" src="/bagpacks/{data.name}.jpg" alt="">
     </div>
 
-    <div class="flex flex-col justify-center items-start">
-        <p class="text-5xl text-amber-700 font-montserrat font-semibold">{data.name.toUpperCase()}</p>
-        <p class="text-2xl font-semibold">{data.type.toUpperCase()}</p>
+    <div class="flex flex-col justify-center items-start sm:mt-16 lg:mt-0">
+        <p class="text-3xl w-64 text-amber-700 font-montserrat font-semibold sm:text-5xl">{data.name.toUpperCase()}</p>
+        <p class="sm:text-2xl font-semibold">{data.type.toUpperCase()}</p>
         <p class="mt-5">COLOR: {bagColor.toUpperCase()}</p>
         <p class="text-2xl mt-2">$ {data.price}</p>
         <div class="flex space-x-2 mt-9">
@@ -57,12 +58,9 @@
             <button on:click={increaseQuantity} class="w-8 h-8 hover:bg-gray-400 active:bg-gray-500">+</button>
         </div>
         <p class="mt-6">
-            <button on:click={updateCart} class="transition-all duration-500 text-sm px-28 py-2 border border-black hover:bg-yellow-700 hover:text-white hover:border-white">ADD TO CART</button>
+            <button on:click={updateCart} class="transition-all duration-500 text-sm px-20 py-2 border border-black hover:bg-yellow-700 hover:text-white hover:border-white sm:px-28">ADD TO CART</button>
         </p>
     </div>
 </section>
 
 
-{#if $isCartOpen}
-    <Cart/>
-{/if}
