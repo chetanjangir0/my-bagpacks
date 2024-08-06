@@ -20,15 +20,17 @@
     }
 
 </script>
-<section class="hidden bg-white h-[22rem] sm:block"></section>
+<section class="hidden bg-white h-[43vh] sm:block"></section>
 
-<section id="hero" class="flex flex-wrap justify-around bg-orange-300 sm:h-[25rem] sm:justify-normal">
+<section id="hero" class="flex flex-wrap justify-around bg-orange-300 sm:h-[50vh]">
     <img
-        class="h-48 sm:h-[750px] sm:relative sm:left-28 sm:bottom-[350px]"
+        class="h-48 sm:h-[750px] sm:absolute sm:left-28 sm:bottom-0"
         src="/heroImage.png"
         alt=""
     />
-    <div class="mt-10 sm:mt-0 sm:left-44 sm:relative sm:top-20">
+    <!-- the below div adjusts for the removed width of the image when it turns into position absolute at screen break point -->
+    <div class="sm:w-[550px] sm:h-[750px]"></div>
+    <div class="mt-10 sm:mt-28">
         <p class="font-bold text-xl font-josefin sm:text-5xl">The last bagpack</p>
         <p class="font-bold text-xl font-josefin mb-3 sm:text-5xl sm:mb-0">you'll ever buy.</p>
         <a href="/thePacks" class="hidden sm:relative sm:inline-block text-lg group ml-24 mt-10">
@@ -49,7 +51,7 @@
         <a class="font-montserrat py-1 px-1 text-xs bg-white rounded-md font-bold sm:hidden" href="/thePacks">Shop now</a>
 
     </div>
-    <div class="mt-6 sm:mt-0 sm:left-96 sm:top-24 sm:relative">
+    <div class="mt-6 sm:mt-28">
         <a target="_blank" href="https://www.facebook.com/chetan.jangir.520">
             <img
                 class="h-3 hover:cursor-pointer my-7 sm:h-5"
