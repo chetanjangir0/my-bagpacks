@@ -9,7 +9,7 @@
         })
     }
 
-    let subTotal=$cartItems.reduce((total,currentValue)=>{return total+currentValue.quantity*currentValue.price},0);
+    $: subTotal=$cartItems.reduce((total,currentValue)=>{return total+currentValue.quantity*currentValue.price},0);
 
 </script>
 
