@@ -1,3 +1,13 @@
+<script>
+    import {GoogleAuthProvider,signInWithPopup} from "firebase/auth"
+    import {auth} from "$lib/firebase"
+
+    async function signInWithGoogle(){
+        const provider= new GoogleAuthProvider();
+        const user = await signInWithPopup(auth,provider);
+
+    }
+</script>
 
 <p class="text-3xl text-center mt-20 font-majorMono sm:text-4xl">Login</p>
 <section class="flex justify-center mt-12 mb-80">
