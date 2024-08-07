@@ -1,10 +1,27 @@
-<script>
+<script lang="ts">
     import {GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth"
-    import {auth, user} from "$lib/firebase";
+    import {auth, user, db} from "$lib/firebase";
+    import {doc,setDoc, getDoc} from "firebase/firestore"
 
     async function signInWithGoogle(){
         const provider= new GoogleAuthProvider();
-        const user = await signInWithPopup(auth,provider);
+        const userCredential = await signInWithPopup(auth,provider);
+        if (user){
+            const docRef=doc(db,"users",userCredential.user.uid)
+            const docSnap=await getDoc(docRef);
+            
+            // Document doesn't exist, create it with initial cart items
+            if(!docSnap.exists()){
+                await setDoc(docRef, {
+                    cartItems:[
+                        {name:'0',type:'0',price:0,size:'0',quantity:0}
+                    ]
+    
+                })
+
+            }
+            
+        }
 
     }
 </script>
