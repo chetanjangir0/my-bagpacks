@@ -6,6 +6,10 @@
     import Hamburger from "./Hamburger.svelte";
     import Cart from "./Cart.svelte";
     export let data: PageData;
+
+    import {user,userData} from "$lib/firebase"
+    $user
+    $userData
   </script>
 <nav class="flex justify-end bg-white py-4 sm:h-[7vh] sm:justify-between">
   <div class="hidden sm:space-x-8  sm:block sm:ml-20">

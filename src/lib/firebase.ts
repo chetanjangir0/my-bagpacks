@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {doc, getFirestore, onSnapshot} from "firebase/firestore";
 import {getAuth, onAuthStateChanged, type User} from "firebase/auth";
-import { derived, writable } from "svelte/store";
+import { derived, writable, type Readable } from "svelte/store";
 
 
 const firebaseConfig = {
@@ -61,10 +61,21 @@ export function docStore<T>(path:string){
     }
 }
 
+interface CartItem {
+    name: string;
+    type: string;
+    price: number;
+    size: string;
+    quantity: number;
+}
+  
+interface Cart {
+    cartItems: CartItem[];
+}
 
-export const userData=derived(user,($user,set)=>{
+export const userData:Readable<Cart|null>=derived(user,($user,set)=>{
     if($user){
-        return docStore(`users/${$user.uid}`).subscribe(set);
+        return docStore<Cart>(`users/${$user.uid}`).subscribe(set);
     }else{
         set(null)
     }
