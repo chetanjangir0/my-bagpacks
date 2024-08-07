@@ -17,6 +17,7 @@
             return
         }
         cartItems.update(items=>[...items,{name:bagpack.name,type:bagpack.type,price:bagpack.price,size:'M',quantity:1}]);
+        
     }
 
 </script>

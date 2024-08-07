@@ -7,7 +7,18 @@
     import Cart from "./Cart.svelte";
     export let data: PageData;
 
-    import {user,userData} from "$lib/firebase"
+    import {user,userData,auth} from "$lib/firebase";
+    import {onAuthStateChanged} from "firebase/auth";
+    import {cartItems} from "../store"
+
+    onAuthStateChanged(auth,user=>{
+      if(user){
+        cartItems.set($userData!.cartItems)
+      }else{
+        cartItems.set([{name:'0',type:'0',price:0,size:'0',quantity:0}])
+      }
+    })
+
     $user
     $userData
   </script>

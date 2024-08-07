@@ -27,6 +27,6 @@ export const featuredBagpacks=readable([
     {name:'chemistry-blue',type:'casual',price:1000},
     {name:'geometry-blue',type:'casual',price:690}
 ])
-export const cartItems=writable([{name:'0',type:'0',price:0,size:'0',quantity:0}]);
 export const isCartOpen=writable(false);
 export const isHamburgerOpen=writable(false);
+export const cartItems=writable([{name:'0',type:'0',price:0,size:'0',quantity:0}]);

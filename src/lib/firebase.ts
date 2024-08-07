@@ -61,7 +61,7 @@ export function docStore<T>(path:string){
     }
 }
 
-interface CartItem {
+export interface CartItem {
     name: string;
     type: string;
     price: number;

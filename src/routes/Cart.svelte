@@ -1,12 +1,24 @@
 <script lang="ts">
-    import { isCartOpen,cartItems } from "../store";
+    import { isCartOpen, cartItems} from "../store";
     import { fade,fly } from "svelte/transition";
-    function removeItemFromCart(itemIndex:number):void{
+    import {doc, setDoc} from "firebase/firestore"
+    import {db,user} from "$lib/firebase"
+
+    async function removeItemFromCart(itemIndex:number){
         cartItems.update((items)=>{
             let tempItems=[...items];
             tempItems.splice(itemIndex,1);
             return tempItems;
         })
+
+        await updateCartItems()
+
+        
+    }
+
+    async function updateCartItems(){
+        const docRef=doc(db,'users',$user!.uid);
+        await setDoc(docRef,{cartItems:$cartItems},{merge:true})
     }
 
     $: subTotal=$cartItems.reduce((total,currentValue)=>{return total+currentValue.quantity*currentValue.price},0);
