@@ -1,6 +1,8 @@
 import { cartItems,isCartOpen } from "../store";
 import {get} from "svelte/store";
 import { updateDB } from "./firebase";
+import {goto} from "$app/navigation"
+import {user} from "$lib/firebase"
 
 export interface Backpack {
     name:string,
@@ -11,6 +13,11 @@ export interface Backpack {
 export type Size= 'XS' | 'S' | 'M' | 'L' | 'XL';
 
 export async function updateCart(backpack:Backpack,size:Size="M",quantity:number=1){
+    if(!get(user)){
+        goto("/login")
+        return
+    }
+
     let productAlreadyInCartIndex:number=get(cartItems).findIndex((element)=>element.name===backpack.name && element.size===size);
     isCartOpen.set(true);
     if(productAlreadyInCartIndex !== -1){
@@ -28,6 +35,11 @@ export async function updateCart(backpack:Backpack,size:Size="M",quantity:number
 
 
 export async function removeItemFromCart(itemIndex:number){
+    if(!get(user)){
+        goto("/login")
+        return
+    }
+
     cartItems.update((items)=>{
         let tempItems=[...items];
         tempItems.splice(itemIndex,1);
