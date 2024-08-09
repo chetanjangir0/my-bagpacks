@@ -1,6 +1,6 @@
 
 import { readable,writable} from "svelte/store";
-export const bagpacks=readable([
+export const backpacks=readable([
     {name:'geometry-black',type:'casual',price:1499},
     {name:'chemistry-orange',type:'casual',price:799},
     {name:'cricket2-yellow',type:'casual',price:799},
@@ -17,15 +17,6 @@ export const bagpacks=readable([
     {name:'kobe-black',type:'casual',price:590},
     {name:'virton-black',type:'casual',price:740},
     {name:'kona-red',type:'casual',price:560}
-])
-
-export const featuredBagpacks=readable([
-    {name:'geometry-black',type:'casual',price:1499},
-    {name:'chemistry-orange',type:'casual',price:799},
-    {name:'cricket2-yellow',type:'casual',price:799},
-    {name:'cricket-blue',type:'casual',price:1749},
-    {name:'chemistry-blue',type:'casual',price:1000},
-    {name:'geometry-blue',type:'casual',price:690}
 ])
 export const isCartOpen=writable(false);
 export const isHamburgerOpen=writable(false);

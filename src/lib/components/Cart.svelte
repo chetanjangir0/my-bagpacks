@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { isCartOpen, cartItems} from "../store";
+    import { isCartOpen, cartItems} from "../../store";
     import { fade,fly } from "svelte/transition";
     import {doc, setDoc} from "firebase/firestore"
     import {db,user} from "$lib/firebase"
@@ -15,8 +15,9 @@
 
         
     }
-
-    async function updateCartItems(){
+    
+    export async function updateCartItems(){
+        
         const docRef=doc(db,'users',$user!.uid);
         await setDoc(docRef,{cartItems:$cartItems},{merge:true})
     }

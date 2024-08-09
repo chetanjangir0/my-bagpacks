@@ -3,8 +3,8 @@
     import { fly } from "svelte/transition";
     import type { PageData } from './$types';
     import { isCartOpen,isHamburgerOpen } from "../store";
-    import Hamburger from "./Hamburger.svelte";
-    import Cart from "./Cart.svelte";
+    import Hamburger from "../lib/components/Hamburger.svelte";
+    import Cart from "../lib/components/Cart.svelte";
     export let data: PageData;
 
     import {user,userData,auth} from "$lib/firebase";

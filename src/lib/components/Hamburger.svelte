@@ -1,6 +1,6 @@
 <script>
     import { fade,fly } from "svelte/transition";
-    import { isHamburgerOpen } from "../store";
+    import { isHamburgerOpen } from "../../store";
 </script>
 
 <section>

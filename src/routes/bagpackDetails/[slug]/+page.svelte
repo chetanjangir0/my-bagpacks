@@ -1,7 +1,9 @@
 <script lang="ts">
+    import {updateCart} from "$lib/utils"
+
     import type { PageData } from "./$types";
-    import { cartItems,isCartOpen } from "../../../store";
     export let data: PageData;
+
     let bagColor:string=data.name.split('-')[1];
     let quantity:number=1;
     function increaseQuantity():void{
@@ -16,20 +18,6 @@
     let size:size='M';
     const sizeButtonClass='w-7 h-7 text-xs text-gray-500 rounded-full transition-all duration-200 hover:border hover:border-gray-700 hover:text-gray-700';
     const sizeButtonClassWhenSelected='w-7 h-7 text-xs rounded-full transition-all duration-200 border border-gray-700 text-gray-700';
-
-    function updateCart():void{
-        let productAlreadyInCartIndex:number=$cartItems.findIndex((element)=>element.name===data.name && element.size===size);
-        isCartOpen.set(true);
-        if(productAlreadyInCartIndex !== -1){
-            cartItems.update(items=>{
-                const tempCart=[...items];
-                tempCart[productAlreadyInCartIndex].quantity+=quantity;
-                return tempCart;
-            })
-            return
-        }
-        cartItems.update(items=>[...items,{name:data.name,type:data.type,price:data.price,size:size,quantity:quantity}]);
-    }
 </script>
 
 
@@ -58,7 +46,7 @@
             <button on:click={increaseQuantity} class="w-8 h-8 hover:bg-gray-400 active:bg-gray-500">+</button>
         </div>
         <p class="mt-6">
-            <button on:click={updateCart} class="transition-all duration-500 text-sm px-20 py-2 border border-black hover:bg-yellow-700 hover:text-white hover:border-white sm:px-28">ADD TO CART</button>
+            <button on:click={()=>updateCart(data,size,quantity)} class="transition-all duration-500 text-sm px-20 py-2 border border-black hover:bg-yellow-700 hover:text-white hover:border-white sm:px-28">ADD TO CART</button>
         </p>
     </div>
 </section>
