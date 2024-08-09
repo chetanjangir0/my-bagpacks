@@ -40,7 +40,7 @@
   </div>
   <div class="flex space-x-11 mr-10 sm:mr-24">
     <img class="h-5 hover:cursor-pointer" src="/searchIcon.png" alt="searchIcon">
-    <a class="hidden sm:block hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">Login</a>
+    <a class="hidden sm:block hover:text-emerald-400 h-5 font-montserrat font-bold" href="/login">{$user ? 'Logout' : "Login"}</a>
     <button class="h-6" on:click={handleCartClick}><img class="h-full hover:cursor-pointer" src="/cartIcon.png" alt="cartIcon"></button>
     <button class="sm:hidden" on:click={()=>isHamburgerOpen.set(true)}><img class="w-5 h-5 hover:cursor-pointer" src="/hamburger.png" alt="cartIcon"></button>
   </div>
