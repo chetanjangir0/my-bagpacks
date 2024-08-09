@@ -10,17 +10,17 @@
     import {user,userData,auth} from "$lib/firebase";
     import {onAuthStateChanged} from "firebase/auth";
     import {cartItems} from "../store"
-
-    onAuthStateChanged(auth,user=>{
-      if(user){
-        cartItems.set($userData!.cartItems)
-      }else{
-        cartItems.set([{name:'0',type:'0',price:0,size:'0',quantity:0}])
-      }
-    })
-
     $user
     $userData
+    
+    // updates the cartitems store by getting the cart info from db(runs only once after the info is retrived)
+    const unsubscribe=userData.subscribe(value=>{
+      if(value){
+        cartItems.set($userData!.cartItems)
+        unsubscribe()
+      }
+    });
+
   </script>
 <nav class="flex justify-end bg-white py-4 sm:h-[7vh] sm:justify-between">
   <div class="hidden sm:space-x-8  sm:block sm:ml-20">

@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
-import {doc, getFirestore, onSnapshot} from "firebase/firestore";
+import {doc, setDoc, getFirestore, onSnapshot} from "firebase/firestore";
 import {getAuth, onAuthStateChanged, type User} from "firebase/auth";
 import { derived, writable, type Readable } from "svelte/store";
+import {get} from "svelte/store"
+import { cartItems } from "../store";
 
 
 const firebaseConfig = {
@@ -80,3 +82,13 @@ export const userData:Readable<Cart|null>=derived(user,($user,set)=>{
         set(null)
     }
 })
+
+
+export async function updateDB(){
+    if(!get(user)){
+        return
+    }
+        
+    const docRef=doc(db,'users',get(user)!.uid);
+    await setDoc(docRef,{cartItems:get(cartItems)},{merge:true})
+}
